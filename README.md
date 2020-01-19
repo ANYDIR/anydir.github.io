@@ -32,3 +32,11 @@ The source file structure is pretty simple, but for those who need it, here's a 
   * ``special/subdir.md`` > ``special/subdir/index.html``
   
   * ``special/index.md`` > ``special/index.html`` (As it's named ``index.md``)
+
+## Current contributors
+
+This is a list of contributors that have made major efforts towards the wiki or are part of the ANYDIR organisation:
+
+* [@LavenderTheGreat](https://github.com/LavenderTheGreat)
+* [@MatteoGodzilla](https://github.com/matteogodzilla)
+* [@shockdude](https://github.com/shockdude)
