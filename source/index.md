@@ -12,9 +12,9 @@ Page edits are not immediately noticeable and will only appear once the wiki is 
 
 ## Categories
 
-* Guides
-* Formats
-    * DJ Hero 1
-    * DJ Hero 2
-* Utilities and modloaders (For players)
-* Tools (For developers)
+* [Guides](https://anydir.github.io/guides/)
+* [Formats](https://anydir.github.io/formats/)
+    * [DJ Hero](https://anydir.github.io/formats/djh1/)
+    * [DJ Hero 2](https://anydir.github.io/formats/djh2/)
+    * [Community](https://anydir.github.io/formats/community/)
+* [Tools and Utilities](https://anydir.github.io/tools/)
