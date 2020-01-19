@@ -6,7 +6,7 @@ DJ Hero has an extremely wide variety of formats within it. The majority of thes
 
 ## Formats
 
-* [__XMK and FSGMUB__](https://anydir.github.io/formats/xmkandfsgmub/)
+* [__XMK and FSGMUB__](https://anydir.github.io/formats/official/xmkandfsgmub/)
 
     XMK and FSGMUB are chart formats for DJ Hero 2 and DJ Hero respectively. The only differences between FSGMUB and XMK are some of the note IDs.
 
