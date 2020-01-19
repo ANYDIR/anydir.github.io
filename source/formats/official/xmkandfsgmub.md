@@ -81,13 +81,9 @@ FSGMUB is the format for DJ Hero charts devised by Freestylegames (FSG). It cons
 
 ## Notes
 
-### DJ Hero 1
-
-DJ Hero 1 has been confirmed to have a note limit of 2500 and a Scratch Zone limit of 504.
-
 ### DJ Hero 2
 
-DJ Hero 2 (as far as we know) also has a note limit of 2500, however it also has Megamixes, which have a limit of 20 songs. The Scratch Zone limit hasn't been tested (also, as far as I know) on DJ Hero 2.
+DJ Hero 2 (as far as we know) has a note limit of 2500, however it also has Megamixes, which have a limit of 20 songs. We are currently unaware of any limits on Crossfades or Scratch Zones however.
 
 ## Further reading
 
