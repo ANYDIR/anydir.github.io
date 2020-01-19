@@ -1,4 +1,4 @@
-# ⇄ANYDIR
+#  ⇌ANYDIR
 
 ANYDIR is a site to store information about DJ Hero and the formats, tools and data within it. We welcome you to submit contributions via pull request!
 
