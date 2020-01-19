@@ -14,7 +14,6 @@ Page edits are not immediately noticeable and will only appear once the wiki is 
 
 * [Guides](https://anydir.github.io/guides/)
 * [Formats](https://anydir.github.io/formats/)
-    * [DJ Hero](https://anydir.github.io/formats/djh1/)
-    * [DJ Hero 2](https://anydir.github.io/formats/djh2/)
+    * [Official](https://anydir.github.io/formats/official/)
     * [Community](https://anydir.github.io/formats/community/)
 * [Tools and Utilities](https://anydir.github.io/tools/)
