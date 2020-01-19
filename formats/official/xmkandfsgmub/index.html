@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="https://anydir.github.io/icon.png">
+        <title>ANYDIR - XMK and FSGMUB
+</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta property="og:title" content="XMK and FSGMUB
+"/>
+        <meta property="og:site_name" content="⇄ANYDIR - The DJ Hero and DJ Hero 2 modding wiki."/>
+        <meta property="og:image" content="https://anydir.github.io/icon.png"/>
+
+        <link rel="stylesheet" href="https://unpkg.com/chota">
+        <link rel="stylesheet" href="https://anydir.github.io/styles/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
+    </head>
+    
+    <body>
+        <div class="main">
+            <div class="row header">
+                <div class="col-3 anydir-logo"> 
+                    ⇄ANYDIR
+                </div>
+                <div class="col-auto anydir-slogan"> 
+                    <div style="display:flex;align-items:center;width:100%;height:100%;">
+                        The DJ Hero and DJ Hero 2 modding wiki.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12"><a href="https://anydir.github.io/">⇄ANYDIR
+</a> <div class="breadcrumb">></div> <a href="https://anydir.github.io/formats">Formats</a> <div class="breadcrumb">></div> <a href="https://anydir.github.io/formats/official">Official formats
+</a></div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="text-align: right">
+                    <a href="https://github.com/anydir/anydir.github.io/blob/master/source/formats/official/xmkandfsgmub.md">
+                        <div class = "djh-tag tag-green">
+                            <span class="octicon octicon-mark-github"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--Body-->
+            <div class="row">
+                <div class="col-2 djh-sidebar">
+                    <br>
+<b>CONTENTS</b>
+<br>
+<a href="#general-structure"><div class="djh-item djh-subitem1">General Structure
+</div></a>
+<br>
+<a href="#note-types"><div class="djh-item djh-subitem1">Note types
+</div></a>
+<br>
+<a href="#notes"><div class="djh-item djh-subitem1">Notes
+</div></a>
+<br>
+<a href="#dj-hero-1"><div class="djh-item djh-subitem2">DJ Hero 1
+</div></a>
+<br>
+<a href="#dj-hero-2"><div class="djh-item djh-subitem2">DJ Hero 2
+</div></a>
+<br>
+<a href="#further-reading"><div class="djh-item djh-subitem1">Further reading
+</div></a>
+                </div>
+                <div class="col-10 djh-main">
+                    <h1 id="xmk-and-fsgmub">XMK and FSGMUB</h1>
+
+<p>FSGMUB is the format for DJ Hero charts devised by Freestylegames (FSG). It consists of a fixed size binary header which says version, the hash, the amount of entries in the chart and the length of the extra string at the end. It then has notes which cover the entire chart and then ends on the extra string.</p>
+
+<h2 id="general-structure">General Structure</h2>
+
+<ul>
+<li>Header
+<ul>
+<li><code>version</code> - int32 number that says the version. (Should be 2)</li>
+<li><code>crc32</code> - 4 byte hash of everything from byte 8 to the last valid byte. Valid byte refers to any byte that is within the length of the chart defined by entry count and string length, you can get where the final actual byte is from the calculation: <code>15+(16*entry count)+stringlength</code></li>
+<li><code>entry count</code> - int32 of how many events/notes there are in the chart.</li>
+<li><code>string length</code> - int32 of how long the final string is</li>
+</ul></li>
+<li>Notes
+<ul>
+<li><code>note</code> - 16 byte entry, these can go on forever.
+<ul>
+<li><code>measureposition</code> - <code>float</code>, how many measures the event is in.</li>
+<li><code>type</code> - <code>int32</code>, what type of note it is</li>
+<li><code>length</code> - <code>float</code>, as far as I know, this is the length in measures a note goes on for. Used for holds, long scratches and Effectors.</li>
+<li><code>extra</code> - <code>4 bytes</code>, varies on what the note type is.</li>
+</ul></li>
+</ul></li>
+<li>Extra string - Has chart author info and sections.</li>
+</ul>
+
+<h2 id="note-types">Note types</h2>
+
+<table>
+<thead>
+<tr>
+  <th align="center">Type Number</th>
+  <th>DJ Hero 1</th>
+  <th>DJ Hero 2</th>
+  <th>Description/Extra Notes</th>
+  <th align="center">Visual (DJH1)</th>
+  <th align="center">Visual (DJH2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td align="center">0</td>
+  <td>Green Tap</td>
+  <td>Green Tap</td>
+  <td></td>
+  <td align="center">⌾</td>
+  <td align="center">⌾</td>
+</tr>
+<tr>
+  <td align="center">1</td>
+  <td>Blue Tap</td>
+  <td>Blue Tap</td>
+  <td></td>
+  <td align="center">⌾</td>
+  <td align="center">⌾</td>
+</tr>
+<tr>
+  <td align="center">2</td>
+  <td>Red Tap</td>
+  <td>Red Tap</td>
+  <td></td>
+  <td align="center">⌾</td>
+  <td align="center">⌾</td>
+</tr>
+<tr>
+  <td align="center">3</td>
+  <td>Green Scratch Up</td>
+  <td>Green Scratch Up</td>
+  <td>Scratch notes must be placed in a Scratch Zone.</td>
+  <td align="center">🜂</td>
+  <td align="center">⇑/🜂</td>
+</tr>
+<tr>
+  <td align="center">4</td>
+  <td>Blue Scratch Up</td>
+  <td>Blue Scratch Up</td>
+  <td>Scratch notes must be placed in a Scratch Zone.</td>
+  <td align="center">🜂</td>
+  <td align="center">⇑/🜂</td>
+</tr>
+<tr>
+  <td align="center">5</td>
+  <td>Green Scratch Down</td>
+  <td>Green Scratch Down</td>
+  <td>Scratch notes must be placed in a Scratch Zone.</td>
+  <td align="center">🜄</td>
+  <td align="center">⇓/🜄</td>
+</tr>
+<tr>
+  <td align="center">6</td>
+  <td>Blue Scratch Down</td>
+  <td>Blue Scratch Down</td>
+  <td>Scratch notes must be placed in a Scratch Zone.</td>
+  <td align="center">🜄</td>
+  <td align="center">⇓/🜄</td>
+</tr>
+<tr>
+  <td align="center">7</td>
+  <td>Green Scratch Any Direction</td>
+  <td>Green Scratch Any Direction</td>
+  <td>Scratch notes must be placed in a Scratch Zone.</td>
+  <td align="center">⥮</td>
+  <td align="center">⥮</td>
+</tr>
+<tr>
+  <td align="center">8</td>
+  <td>Blue Scratch Any Direction</td>
+  <td>Blue Scratch Any Direction</td>
+  <td>Scratch notes must be placed in a Scratch Zone.</td>
+  <td align="center">⥮</td>
+  <td align="center">⥮</td>
+</tr>
+<tr>
+  <td align="center">9</td>
+  <td>Crossfade Right</td>
+  <td>Crossfade Right</td>
+  <td></td>
+  <td align="center">││┌</td>
+  <td align="center">││┌</td>
+</tr>
+<tr>
+  <td align="center">10</td>
+  <td>Crossfade Center</td>
+  <td>Crossfade Center</td>
+  <td></td>
+  <td align="center">│││</td>
+  <td align="center">│││</td>
+</tr>
+<tr>
+  <td align="center">11</td>
+  <td>Crossfade Left</td>
+  <td>Crossfade Left</td>
+  <td></td>
+  <td align="center">┐││</td>
+  <td align="center">┐││</td>
+</tr>
+<tr>
+  <td align="center">12</td>
+  <td>Green Effector</td>
+  <td>Green Effector</td>
+  <td>Defaults to Filter if no Effector Type is used before it.</td>
+  <td align="center">⛣</td>
+  <td align="center">⛣</td>
+</tr>
+<tr>
+  <td align="center">13</td>
+  <td>Blue Effector</td>
+  <td>Blue Effector</td>
+  <td></td>
+  <td align="center">⛣</td>
+  <td align="center">⛣</td>
+</tr>
+<tr>
+  <td align="center">14</td>
+  <td>Red Effector</td>
+  <td>Red Effector</td>
+  <td></td>
+  <td align="center">⛣</td>
+  <td align="center">⛣</td>
+</tr>
+<tr>
+  <td align="center">15</td>
+  <td>Euphoria</td>
+  <td>Euphoria</td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">16</td>
+  <td>Sample Zone</td>
+  <td>Sample Zone (Configurable)</td>
+  <td>Sample zones in DJ Hero 2 are configurable using extra data, picking samples defined in the track listing.</td>
+</tr>
+<tr>
+  <td align="center">17</td>
+  <td>🚫</td>
+  <td>Freestyle Crossfading Zone</td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">18</td>
+  <td>Nothing?</td>
+  <td>🚫</td>
+  <td>Appears in old/unused DJ Hero charts, maybe a placeholder for an old mechanic that didn't make it into final.</td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">19</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">20</td>
+  <td>🚫</td>
+  <td>Green Scratchzone</td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center">⥮</td>
+</tr>
+<tr>
+  <td align="center">21</td>
+  <td>🚫</td>
+  <td>Blue Scratchzone</td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center">⥮</td>
+</tr>
+<tr>
+  <td align="center">22</td>
+  <td>🚫</td>
+  <td>All Lane Effector</td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center">⛣</td>
+</tr>
+<tr>
+  <td align="center">23</td>
+  <td>🚫</td>
+  <td>Force center crossfade</td>
+  <td>Useful for low difficulty charts.</td>
+  <td align="center"></td>
+  <td align="center">│││</td>
+</tr>
+<tr>
+  <td align="center">24</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">25</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">26</td>
+  <td>🚫</td>
+  <td>Battle chart special event</td>
+  <td>Used for switching players or finishing checkpoints as defined in <code>ChunkRemix.xml</code>.</td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">27</td>
+  <td>🚫</td>
+  <td>Green Crossfade Spike</td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center">⧏</td>
+  <td></td>
+</tr>
+<tr>
+  <td align="center">28</td>
+  <td>🚫</td>
+  <td>Blue Crossfade Spike</td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center">⧐</td>
+  <td></td>
+</tr>
+<tr>
+  <td align="center">29</td>
+  <td>🚫</td>
+  <td>Center Crossfade Spike</td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center">⧏/⧐</td>
+  <td></td>
+</tr>
+<tr>
+  <td align="center">30</td>
+  <td>🚫</td>
+  <td>Megamix Transition</td>
+  <td>Must be used on a centered crossfade.</td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">31</td>
+  <td>🚫</td>
+  <td>Crossfade Freestyle Marker Green</td>
+  <td>For clarification: These are presumably the markers which act like waveforms to show when each track is playing or having beats on a freestyle crossfade.</td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">32</td>
+  <td>🚫</td>
+  <td>Crossfade Freestyle Marker Blue</td>
+  <td>For clarification: These are presumably the markers which act like waveforms to show when each track is playing or having beats on a freestyle crossfade.</td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">...</td>
+  <td>...</td>
+  <td>...</td>
+  <td>...</td>
+  <td align="center">...</td>
+  <td align="center">...</td>
+</tr>
+<tr>
+  <td align="center">44</td>
+  <td>Nothing? (Chart end?)</td>
+  <td>🚫</td>
+  <td>Presumably found near the end of some charts.</td>
+</tr>
+<tr>
+  <td align="center">45</td>
+  <td>Nothing? (Chart end?)</td>
+  <td>🚫</td>
+  <td>Presumably found near the end of some charts.</td>
+</tr>
+<tr>
+  <td align="center">46</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">47</td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td align="center"></td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">48</td>
+  <td>Green Scratchzone</td>
+  <td>🚫</td>
+  <td></td>
+  <td align="center">⥮</td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">49</td>
+  <td>Blue Scratchzone</td>
+  <td>🚫</td>
+  <td></td>
+  <td align="center">⥮</td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">50</td>
+  <td>All Lane Effector</td>
+  <td>🚫</td>
+  <td></td>
+  <td align="center">⛣</td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">51</td>
+  <td>Force center crossfade</td>
+  <td>🚫</td>
+  <td>Useful for low difficulty charts.</td>
+  <td align="center">│││</td>
+  <td align="center"></td>
+</tr>
+<tr>
+  <td align="center">...</td>
+  <td>...</td>
+  <td>...</td>
+  <td>...</td>
+  <td align="center">...</td>
+  <td align="center">...</td>
+</tr>
+<tr>
+  <td align="center"><code>0x05FFFFFF</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Filter</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000000</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Beat Roll</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000001</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Bit Reduction</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000002</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Wah Wah</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000003</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Ring Mod</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000004</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Stutter</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000005</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Flanger</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000006</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Robot</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000007</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Beat Roll (Auto Advance)</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000008</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Unused (Filter)</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x06000009</code></td>
+  <td>🚫</td>
+  <td>Effector Type: Delay</td>
+  <td>Changes the current effector type.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x0AFFFFFF</code></td>
+  <td>🚫</td>
+  <td>Charter Name</td>
+  <td>Extra data is an address pointing to where this is stored. Used on the song select of DJ Hero 2.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x0B000001</code></td>
+  <td>🚫</td>
+  <td>Beat Marker Distance</td>
+  <td>Extra data is an Int32 defining the amount of microseconds (1/1000th of a millisecond) between each marker, equivalent to 60,000,000 / bpm.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x0B000002</code></td>
+  <td>🚫</td>
+  <td>BPM Change (Unused)</td>
+  <td>Does nothing, might've been used in development to go near Beat Marker Distance to make it clearer.</td>
+</tr>
+<tr>
+  <td align="center"><code>0x09FFFFFF</code></td>
+  <td>🚫</td>
+  <td>Section/Rewind Checkpoint</td>
+  <td>Extra data defines the address of which string to use for this section.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="notes">Notes</h2>
+
+<h3 id="dj-hero-1">DJ Hero 1</h3>
+
+<p>DJ Hero 1 has been confirmed to have a note limit of 2500 and a Scratch Zone limit of 504.</p>
+
+<h3 id="dj-hero-2">DJ Hero 2</h3>
+
+<p>DJ Hero 2 (as far as we know) also has a note limit of 2500, however it also has Megamixes, which have a limit of 20 songs. The Scratch Zone limit hasn't been tested (also, as far as I know) on DJ Hero 2.</p>
+
+<h2 id="further-reading">Further reading</h2>
+
+<ul>
+<li><p><a href="https://pastebin.com/Q4ZT9xj2">https://pastebin.com/Q4ZT9xj2</a> - Original source of which this information was mainly taken from</p></li>
+<li><p><a href="https://anydir.github.io/tools/djhtools/">DJHTools</a></p></li>
+</ul>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
