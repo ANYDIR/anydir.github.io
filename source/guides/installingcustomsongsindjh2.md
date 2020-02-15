@@ -1,6 +1,6 @@
 # Installing Custom Songs in DJ Hero 2
 
-Assuming you already have a jailbroken/modded console or an emulator set up, and all the DJH2 files extracted.
+Assuming you already have a jailbroken/modded console or an emulator set up, and all the DJH2 files extracted onto your PC.
 
 Available customs: [DJ Hero Customs Spreadsheet](https://docs.google.com/spreadsheets/d/12-2cq5ghomO-UDt1xWEqXLt4\_f0gP1m7G4o-h4HW1\_c/)
 
@@ -37,6 +37,7 @@ See the README.txt included in the custom for more info.
   * The Song Folder should contain files like "DJ.fsb" and "DJ\_Expert.xmk".
 * Open TrackListing.xml in Notepad++
 * Open the custom's "Info for TrackListing.xml" in Notepad++, and copy the contents into TrackListing.xml.
+  * Between the first `<Track ...>` and the last `</Track>`. Don't copy the `<TrackList>` tags.
   * TrackListing.xml location: [Wii, PS3, X360]/Audio/Audiotracks/TrackListing.xml in Notepad++
   * A good place is at the top of the file, between `<TrackList>` and the first `<Track ingame="true" ...` line.
 
@@ -53,8 +54,13 @@ See the README.txt included in the custom for more info.
   * Adding newlines at the bottom of TRAC.csv is ok.
 * Save TRAC.csv
 * Drag-and-drop TRAC.csv onto djh\_text\_csv\_convert.exe
+  * **Don't forget this step** or else the text files won't take effect!
 
-## PS3-only: Rename all files to be upper-case
+## PS3-only required steps
+
+There are a few additional steps required for PS3 console users, otherwise Customs won't work.
+
+### Rename all files to be upper-case
 
 The PS3 console requires all game filenames to be upper-case or else the game/customs wonâ€™t work. Fortunately, this is easily done with a script.
 
@@ -66,3 +72,12 @@ Note: Renaming only works properly on NTFS formatted drives. If the script isnâ€
   * [Google Drive](https://drive.google.com/open?id=1ETZe4wT69L1scKskW-4KnLE7o0WycgLd)
   * [Source](https://stackoverflow.com/questions/43992595/recursively-rename-files-and-subfolders-in-a-folder-using-batch-script)
 * Run TO\_UPPER.BAT
+
+### Rename the v1.01 patch's TEXT folder
+
+The v1.01 patch for DJ Hero 2 includes a TEXT folder that will override your customized Text strings. For custom strings to work, you'll need to rename the TEXT folder.
+
+* Navigate to DJ Hero 2's Patch folder
+  * NTSC: `/dev_hdd0/game/BLUS30526/PATCH/`
+  * PAL: `/dev_hdd0/game/BLES00896/PATCH/`
+* Rename the `TEXT` folder to something else, e.g. `TEXT_bak`
