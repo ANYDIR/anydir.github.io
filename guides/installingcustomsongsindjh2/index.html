@@ -67,13 +67,19 @@
 <a href="#setting-up-the-text-folder"><div class="djh-item djh-subitem2">Setting up the Text folder
 </div></a>
 <br>
-<a href="#ps3-only-rename-all-files-to-be-upper-case"><div class="djh-item djh-subitem1">PS3-only: Rename all files to be upper-case
+<a href="#ps3-only-required-steps"><div class="djh-item djh-subitem1">PS3-only required steps
+</div></a>
+<br>
+<a href="#rename-all-files-to-be-upper-case"><div class="djh-item djh-subitem2">Rename all files to be upper-case
+</div></a>
+<br>
+<a href="#rename-the-v1-01-patch-s-text-folder"><div class="djh-item djh-subitem2">Rename the v1.01 patch's TEXT folder
 </div></a>
                 </div>
                 <div class="col-10 djh-main">
                     <h1 id="installing-custom-songs-in-dj-hero-2">Installing Custom Songs in DJ Hero 2</h1>
 
-<p>Assuming you already have a jailbroken/modded console or an emulator set up, and all the DJH2 files extracted.</p>
+<p>Assuming you already have a jailbroken/modded console or an emulator set up, and all the DJH2 files extracted onto your PC.</p>
 
 <p>Available customs: <a href="https://docs.google.com/spreadsheets/d/12-2cq5ghomO-UDt1xWEqXLt4_f0gP1m7G4o-h4HW1_c/">DJ Hero Customs Spreadsheet</a></p>
 
@@ -120,6 +126,7 @@
 <li>Open TrackListing.xml in Notepad++</li>
 <li>Open the custom's "Info for TrackListing.xml" in Notepad++, and copy the contents into TrackListing.xml.
 <ul>
+<li>Between the first <code>&lt;Track ...&gt;</code> and the last <code>&lt;/Track&gt;</code>. Don't copy the <code>&lt;TrackList&gt;</code> tags.</li>
 <li>TrackListing.xml location: [Wii, PS3, X360]/Audio/Audiotracks/TrackListing.xml in Notepad++</li>
 <li>A good place is at the top of the file, between <code>&lt;TrackList&gt;</code> and the first <code>&lt;Track ingame="true" ...</code> line.</li>
 </ul></li>
@@ -146,10 +153,17 @@
 <li>Adding newlines at the bottom of TRAC.csv is ok.</li>
 </ul></li>
 <li>Save TRAC.csv</li>
-<li>Drag-and-drop TRAC.csv onto djh_text_csv_convert.exe</li>
+<li>Drag-and-drop TRAC.csv onto djh_text_csv_convert.exe
+<ul>
+<li><strong>Don't forget this step</strong> or else the text files won't take effect!</li>
+</ul></li>
 </ul>
 
-<h2 id="ps3-only-rename-all-files-to-be-upper-case">PS3-only: Rename all files to be upper-case</h2>
+<h2 id="ps3-only-required-steps">PS3-only required steps</h2>
+
+<p>There are a few additional steps required for PS3 console users, otherwise Customs won't work.</p>
+
+<h3 id="rename-all-files-to-be-upper-case">Rename all files to be upper-case</h3>
 
 <p>The PS3 console requires all game filenames to be upper-case or else the game/customs won’t work. Fortunately, this is easily done with a script.</p>
 
@@ -164,6 +178,19 @@
 <li><a href="https://stackoverflow.com/questions/43992595/recursively-rename-files-and-subfolders-in-a-folder-using-batch-script">Source</a></li>
 </ul></li>
 <li>Run TO_UPPER.BAT</li>
+</ul>
+
+<h3 id="rename-the-v101-patchs-text-folder">Rename the v1.01 patch's TEXT folder</h3>
+
+<p>The v1.01 patch for DJ Hero 2 includes a TEXT folder that will override your customized Text strings. For custom strings to work, you'll need to rename the TEXT folder.</p>
+
+<ul>
+<li>Navigate to DJ Hero 2's Patch folder
+<ul>
+<li>NTSC: <code>/dev_hdd0/game/BLUS30526/PATCH/</code></li>
+<li>PAL: <code>/dev_hdd0/game/BLES00896/PATCH/</code></li>
+</ul></li>
+<li>Rename the <code>TEXT</code> folder to something else, e.g. <code>TEXT_bak</code></li>
 </ul>
 
                 </div>
