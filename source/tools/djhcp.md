@@ -9,8 +9,7 @@ Every library is included inside the zip.
 
 ## Usage
 
-REMOVE THIS LINE
-![]()
+![Main Screen](res/main%20screen.png)
 
 This is the main screen of DJHCP, where everything happens. In order:
 1. Search bar to search for songs based from their id or from the string data referenced from the track entry
@@ -33,8 +32,7 @@ This will be referenced in the guide as "Load the extracted files"
 
 After that, if djhcp can open the files, you'll be greeted with something like this. 
 
-REMOVE THIS LINE
-![]()
+![Loaded entries](res/djhcp-loaded-data.png)
 
 Entries inside the track list don't need to be the exact same one as shown. The important thing is if DJHCP loadeded successfully the tracks.
 
