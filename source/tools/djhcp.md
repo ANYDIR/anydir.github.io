@@ -1,4 +1,4 @@
-# DJHCP General guide
+# DJHCP
 
 DJHCP (**DJ H**ero **C**ontrol **P**anel) is a tool by MatteoGodzilla to organise customs, generate track listing XML files and to find the song id from the text entries. It currently only supports Windows natively.
 
@@ -9,7 +9,7 @@ Every library is included inside the zip.
 
 ## Usage
 
-![Main Screen](res/main%20screen.png)
+![Main Screen](../../res/djhcp/main%20screen.png)
 
 This is the main screen of DJHCP, where everything happens. In order:
 1. Search bar to search for songs based from their id or from the string data referenced from the track entry
@@ -32,7 +32,7 @@ This will be referenced in the guide as "Load the extracted files"
 
 After that, if djhcp can open the files, you'll be greeted with something like this. 
 
-![Loaded entries](res/djhcp-loaded-data.png)
+![Loaded entries](../../res/djhcp/djhcp-loaded-data.png)
 
 Entries inside the track list don't need to be the exact same one as shown. The important thing is if DJHCP loadeded successfully the tracks.
 
