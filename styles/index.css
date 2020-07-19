@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Righteous&display=swap');
+
+body{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(0,0,0);
+    color: rgb(255,255,255)
+}
+
+a {
+    color: rgb(255,255,255);
+    text-decoration: none;
+}
+
+.main{
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 1000px
+}
+
+:root {
+    --grid-maxWidth: 1000px;
+    --grid-gutter: 2rem;
+    --font-size: 1.8rem;
+    --font-family: "Helvetica Neue", sans-serif;
+}
+
+.anydir-logo{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.anydir-slogan{
+    font-weight: 500;
+}
+
+.breadcrumb{
+    font-family: 'Righteous', sans-serif;
+    display: inline;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 700;
+}
+
+h1{
+    border-bottom: 1px solid rgba(255,255,255,1)
+}
+
+h2{
+    border-bottom: 1px solid rgba(255,255,255,0.1)
+}
+
+h4{
+    font-size: 1.6rem;
+}
+
+.djh-sidebar{
+    font-size: 1.4rem;
+}
+
+.djh-item {
+    margin-top: 1rem
+}
+
+.djh-subitem1 {
+    margin-left: 1rem
+}
+
+.djh-subitem2 {
+    margin-left: 2rem
+}
+
+.djh-subitem3 {
+    margin-left: 3rem
+}
+
+.djh-subitem4 {
+    margin-left: 4rem
+}
+
+.djh-subitem5 {
+    margin-left: 5rem
+}
+
+.djh-subitem6 {
+    margin-left: 6rem
+}
+
+.djh-main{
+    font-size: 1.6rem;
+}
+
+.djh-main a{
+    text-decoration: underline;
+}
+
+.djh-tag{
+    --tagcolor: rgba(255,255,255,1);
+    --tagcolora: rgba(255,255,255,0);
+    --hovertext: rgba(0,0,0,1);
+    border: 0.3rem solid var(--tagcolor);
+    border-radius: 150px;
+    padding: 2px 10px 2px 10px;
+    display: inline-block;
+    background-color: var(--tagcolora);
+    color: var(--tagcolor);
+    transition: 0.4s;
+    font-size: 1.4rem;
+}
+
+.djh-tag:hover{
+    color: var(--hovertext);
+    background-color: var(--tagcolor);
+    transition: 0s;
+}
+
+.tag-green{
+    --tagcolor: #0dcf1aff;
+    --tagcolora: #0dcf1a00;
+    --hovertext: rgba(255,255,255,1);
+}
+
+.tag-red{
+    --tagcolor: #d91414ff;
+    --tagcolora: #d9141400;
+    --hovertext: rgba(255,255,255,1);
+}
+
+.tag-blue{
+    --tagcolor: #24a8edff;
+    --tagcolora: #24a8ed00;
+    --hovertext: rgba(255,255,255,1);
+}
+
+.djh-tagcontainer{
+    text-align: right;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="https://anydir.github.io/icon.png">
+        <title>ANYDIR - DJHCP
+</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://unpkg.com/chota">
+        <link rel="stylesheet" href="https://anydir.github.io/styles/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
+    </head>
+    
+    <body>
+        <div class="main">
+            <div class="row header">
+                <div class="col-3 anydir-logo"> 
+                    ⇄ANYDIR
+                </div>
+                <div class="col-auto anydir-slogan"> 
+                    <div style="display:flex;align-items:center;width:100%;height:100%;">
+                        The DJ Hero and DJ Hero 2 modding wiki.
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12"><a href="https://anydir.github.io/"> ⇌ANYDIR
+</a> <div class="breadcrumb">></div> <a href="https://anydir.github.io/tools">Tools
+</a></div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="text-align: right">
+                    <a href="https://github.com/anydir/anydir.github.io/blob/wiki/wiki/tools/djhcp.md">
+                        <div class = "djh-tag tag-green">
+                            <span class="octicon octicon-mark-github"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--Body-->
+            <div class="row">
+                <div class="col-2 djh-sidebar">
+                    <br>
+<b>CONTENTS</b>
+<br>
+<a href="#how-to-install"><div class="djh-item djh-subitem1">How to install
+</div></a>
+<br>
+<a href="#usage"><div class="djh-item djh-subitem1">Usage
+</div></a>
+<br>
+<a href="#how-to-install-a-custom"><div class="djh-item djh-subitem2">How to install a custom
+</div></a>
+<br>
+<a href="#how-to-remove-a-custom"><div class="djh-item djh-subitem2">How to remove a custom
+</div></a>
+<br>
+<a href="#how-to-edit-string-data"><div class="djh-item djh-subitem2">How to edit string data
+</div></a>
+                </div>
+                <div class="col-10 djh-main">
+                    <h1 id="djhcp">DJHCP</h1>
+
+<p>DJHCP (<strong>DJ H</strong>ero <strong>C</strong>ontrol <strong>P</strong>anel) is a tool by MatteoGodzilla to organise customs, generate track listing XML files and to find the song id from the text entries. It currently only supports Windows natively.</p>
+
+<h2 id="how-to-install">How to install</h2>
+
+<p>Download and extract the latest zip on <a href="https://github.com/MatteoGodzilla/DJHCP/releases">MatteoGodzilla/DJHCP/releases</a> (latest version at the time of writing: v4.0).
+Every library is included inside the zip.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p><img src="../../res/djhcp/main%20screen.png" alt="Main Screen" /></p>
+
+<p>This is the main screen of DJHCP, where everything happens. In order:
+1. Search bar to search for songs based from their id or from the string data referenced from the track entry
+2. "Open Extracted Files" button. Must be pressed every single time to be able to modify the data
+3. Currently loaded tracks. Shows only the id and the folder path
+4. Additional song information, such as names, artists, bpm, difficulty and more
+5. String data editor/viewer.
+6. "Add Custom" button.
+7. "Update files" button. Must be pressed to actually write the changes to the files</p>
+
+<h3 id="how-to-install-a-custom">How to install a custom</h3>
+
+<p><strong>!DISCLAIMER!: DJHCP only works with extracted and visible files from the original Dj Hero games. This readme does not include a guide on how to do that.</strong></p>
+
+<p><strong>If you haven't started yet and want to try customs, DJHCP has been tested and is fully working under/with Dj Hero 2 game files. Compatibility for the first Dj Hero is NOT guaranteed</strong></p>
+
+<p>First, click the "Open extracted files" button. This will open a dialog where you can choose a folder. Navigate to the extracted game files and open the WII,PS3 or X360 folder inside DATA\files.</p>
+
+<p>This will be referenced in the guide as "Load the extracted files"</p>
+
+<p>After that, if djhcp can open the files, you'll be greeted with something like this. </p>
+
+<p><img src="../../res/djhcp/djhcp-loaded-data.png" alt="Loaded entries" /></p>
+
+<p>Entries inside the track list don't need to be the exact same one as shown. The important thing is if DJHCP loadeded successfully the tracks.</p>
+
+<p>From this point you can add a custom in 2 ways:
+  * drag&amp;drop the "DJH2\info for tracklisting.xml" file from the customs' folder on top of the "Add Custom button"
+  * Clicking the Add Custom button, then opening the same file from the dialog that appears.</p>
+
+<p>After these, DJHCP will try to add the song to the tracklist, copy the files from the custom to AUDIO\Audiotracks and add the linked string data to the dictionary. If the custom's files are already present in the destination folder (because you added them manually or you added that custom before), DJHCP will warn you about it.</p>
+
+<p>You can add as many customs as you want.</p>
+
+<p>When you want to apply the changes, just click the "Update File" button on the bottom right.</p>
+
+<p>If everything worked, you just added a custom to the game. 👏Congratulations👏</p>
+
+<h3 id="how-to-remove-a-custom">How to remove a custom</h3>
+
+<p>Load the extracted files, then just select the custom you want to delete and press delete on the keyboard. Confirm the remove by clicking yes on the dialog.</p>
+
+<h3 id="how-to-edit-string-data">How to edit string data</h3>
+
+<p>Load the extracted files, then press the "Edit Trac.csv data" Button. this will open a simple dialog where you can view/edit string data to fix !MISSING! inside the game. This is not easy and you should ask in the discord server for help.</p>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
