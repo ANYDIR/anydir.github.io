@@ -1,8 +1,0 @@
-# Ignore problematic directories.
-source/source/
-source/template/
-
-# Ignore files used by DJHWikiBuilder
-build.py
-template
-template/
