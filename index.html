@@ -1,87 +1,45 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="icon" href="https://anydir.github.io/icon.png">
-        <title>ANYDIR -  ⇌ANYDIR
-</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://unpkg.com/chota">
-        <link rel="stylesheet" href="https://anydir.github.io/styles/index.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css">
-        
-        <meta property="og:title" content="ANYDIR -  ⇌ANYDIR
-"/>
-        <meta property="og:site_name" content=" ⇌ANYDIR - The DJ Hero and DJ Hero 2 modding wiki."/>
-        <meta property="og:image" content="https://anydir.github.io/icon.png"/>
-    </head>
-    
-    <body>
-        <div class="main">
-            <div class="row header">
-                <div class="col-3 anydir-logo"> 
-                    ⇌ANYDIR
-                </div>
-                <div class="col-auto anydir-slogan"> 
-                    <div style="display:flex;align-items:center;width:100%;height:100%;">
-                        The DJ Hero and DJ Hero 2 modding wiki.
-                    </div>
-                </div>
-            </div>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="notes.css">
+    <link rel="icon" href="res/icon.png">
+    <title>ANYDIR Wiki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
 
-            <div class="row">
-                <div class="col-12"></div>
-            </div>
-
-            <div class="row">
-                <div class="col-12" style="text-align: right">
-                    <a href="https://github.com/anydir/anydir.github.io/blob/wiki/index.md">
-                        <div class = "djh-tag tag-green">
-                            <span class="octicon octicon-mark-github"></span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <!--Body-->
-            <div class="row">
-                <div class="col-2 djh-sidebar">
-                    <br>
-<b>CONTENTS</b>
-<br>
-<a href="#navigating-anydir"><div class="djh-item djh-subitem1">Navigating ANYDIR
-</div></a>
-<br>
-<a href="#categories"><div class="djh-item djh-subitem1">Categories
-</div></a>
-                </div>
-                <div class="col-10 djh-main">
-                    <h1 id="anydir">⇌ANYDIR</h1>
-
-<p>ANYDIR is a site to store information about DJ Hero and the formats, tools and data within it. We welcome you to submit contributions via pull request!</p>
-
-<h2 id="navigating-anydir">Navigating ANYDIR</h2>
-
-<p>ANYDIR currently lacks a search bar, so the main way to navigate is either through searching the GitHub repo or through clicking sidebar and category links.</p>
-
-<p>To go to the source file for any page, hit the green Github icon in the corner, from there you can edit pages and send pull requests to edit pages.</p>
-
-<p>Page edits are not immediately noticeable and will only appear once the wiki is rebuilt (Fairly regularly) as it's a static site.</p>
-
-<h2 id="categories">Categories</h2>
-
-<ul>
-<li><a href="https://anydir.github.io/guides/">Guides</a></li>
-<li><a href="https://anydir.github.io/formats/">Formats</a>
-<ul>
-<li><a href="https://anydir.github.io/formats/official/">Official</a></li>
-<li><a href="https://anydir.github.io/formats/community/">Community</a></li>
-</ul></li>
-<li><a href="https://anydir.github.io/tools/">Tools and Utilities</a></li>
-</ul>
-
-                </div>
+    <div class="body-container">
+        <div class="navbar">
+            <div style="align-self: center; margin-right: auto; margin-left: auto;">
+                <a href="?a=index"><img src="res/icon.png"></a>
             </div>
         </div>
-    </body>
+
+        <div class="breadcrumbs" id="breadcrumbs">
+
+        </div>
+
+        <div class="tags">
+            <a id="githubLink" class="github" href="">Create This Page On Github</a>
+        </div>
+
+        <div class="main-container" id="main-container">
+            <div class="sidebar" id="sidebar">
+                <div class="header">
+                    Contents
+                </div>
+            </div>
+
+            <div class="body-text" id="article">
+                ...
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+    <script src="notes.js"></script>
 </html>
