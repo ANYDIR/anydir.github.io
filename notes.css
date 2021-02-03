@@ -174,7 +174,8 @@ th, td {
 }
 
 code {
-    background-color: var(--pal2);
+    background-color: var(--pal0);
+    color: var(--pal3);
     padding: 3px;
     border-radius: 3px;
     margin: 3px;
